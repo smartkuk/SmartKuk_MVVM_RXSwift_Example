@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7791163ECA9C2C3DEB58A889 /* Pods_SmartKuk_MVVM_RXSwift_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A8DC4ECE6840AFAC2EC0754 /* Pods_SmartKuk_MVVM_RXSwift_Example.framework */; };
 		C37C0A012161A66500975AFF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37C0A002161A66500975AFF /* AppDelegate.swift */; };
 		C37C0A032161A66500975AFF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37C0A022161A66500975AFF /* ViewController.swift */; };
 		C37C0A062161A66500975AFF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C37C0A042161A66500975AFF /* Main.storyboard */; };
@@ -15,6 +16,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1B191633195257483290A16D /* Pods-SmartKuk_MVVM_RXSwift_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartKuk_MVVM_RXSwift_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SmartKuk_MVVM_RXSwift_Example/Pods-SmartKuk_MVVM_RXSwift_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		6A8DC4ECE6840AFAC2EC0754 /* Pods_SmartKuk_MVVM_RXSwift_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SmartKuk_MVVM_RXSwift_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C1FE4226175FDDE99A96E037 /* Pods-SmartKuk_MVVM_RXSwift_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartKuk_MVVM_RXSwift_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-SmartKuk_MVVM_RXSwift_Example/Pods-SmartKuk_MVVM_RXSwift_Example.release.xcconfig"; sourceTree = "<group>"; };
 		C37C09FD2161A66500975AFF /* SmartKuk_MVVM_RXSwift_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SmartKuk_MVVM_RXSwift_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C37C0A002161A66500975AFF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C37C0A022161A66500975AFF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -29,17 +33,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7791163ECA9C2C3DEB58A889 /* Pods_SmartKuk_MVVM_RXSwift_Example.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3054A62B6B28BE340E537FA4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6A8DC4ECE6840AFAC2EC0754 /* Pods_SmartKuk_MVVM_RXSwift_Example.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BD1E3CB50A29DDDF360A53BC /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1B191633195257483290A16D /* Pods-SmartKuk_MVVM_RXSwift_Example.debug.xcconfig */,
+				C1FE4226175FDDE99A96E037 /* Pods-SmartKuk_MVVM_RXSwift_Example.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		C37C09F42161A66400975AFF = {
 			isa = PBXGroup;
 			children = (
 				C37C09FF2161A66500975AFF /* SmartKuk_MVVM_RXSwift_Example */,
 				C37C09FE2161A66500975AFF /* Products */,
+				BD1E3CB50A29DDDF360A53BC /* Pods */,
+				3054A62B6B28BE340E537FA4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -71,9 +95,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C37C0A0F2161A66500975AFF /* Build configuration list for PBXNativeTarget "SmartKuk_MVVM_RXSwift_Example" */;
 			buildPhases = (
+				B88D5BAC008F4B2BB0E2A1E0 /* [CP] Check Pods Manifest.lock */,
 				C37C09F92161A66500975AFF /* Sources */,
 				C37C09FA2161A66500975AFF /* Frameworks */,
 				C37C09FB2161A66500975AFF /* Resources */,
+				5137CDC01DFBB367EA5B86C2 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -129,6 +155,47 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5137CDC01DFBB367EA5B86C2 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-SmartKuk_MVVM_RXSwift_Example/Pods-SmartKuk_MVVM_RXSwift_Example-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SmartKuk_MVVM_RXSwift_Example/Pods-SmartKuk_MVVM_RXSwift_Example-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B88D5BAC008F4B2BB0E2A1E0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SmartKuk_MVVM_RXSwift_Example-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		C37C09F92161A66500975AFF /* Sources */ = {
@@ -280,15 +347,13 @@
 		};
 		C37C0A102161A66500975AFF /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1B191633195257483290A16D /* Pods-SmartKuk_MVVM_RXSwift_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8GLTDQRSPV;
 				INFOPLIST_FILE = SmartKuk_MVVM_RXSwift_Example/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "SmartKuk.SmartCompany.SmartKuk-MVVM-RXSwift-Example";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -298,15 +363,13 @@
 		};
 		C37C0A112161A66500975AFF /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C1FE4226175FDDE99A96E037 /* Pods-SmartKuk_MVVM_RXSwift_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8GLTDQRSPV;
 				INFOPLIST_FILE = SmartKuk_MVVM_RXSwift_Example/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "SmartKuk.SmartCompany.SmartKuk-MVVM-RXSwift-Example";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;

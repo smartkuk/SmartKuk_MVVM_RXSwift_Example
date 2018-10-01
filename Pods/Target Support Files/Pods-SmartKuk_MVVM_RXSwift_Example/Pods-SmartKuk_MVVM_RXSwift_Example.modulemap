@@ -1,0 +1,6 @@
+framework module Pods_SmartKuk_MVVM_RXSwift_Example {
+  umbrella header "Pods-SmartKuk_MVVM_RXSwift_Example-umbrella.h"
+
+  export *
+  module * { export * }
+}
