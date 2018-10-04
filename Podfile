@@ -8,5 +8,7 @@ target 'SmartKuk_MVVM_RXSwift_Example' do
   # Pods for SmartKuk_MVVM_RXSwift_Example
   pod 'RxSwift', '~> 4.3'
   pod 'RxCocoa', '~> 4.3'
+  pod 'Alamofire', '~> 4.7'
+  pod 'AlamofireObjectMapper', '~> 5.1'
 
 end
