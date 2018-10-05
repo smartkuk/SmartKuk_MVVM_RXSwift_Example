@@ -9,6 +9,7 @@
 import Foundation
 import Alamofire
 import RxSwift
+import RxCocoa
 
 /// CurrencyServiceProtocol 프로토콜 구현체
 final class CurrencyService: CurrencyServiceProtocol {

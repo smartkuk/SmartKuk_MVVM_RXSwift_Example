@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		7791163ECA9C2C3DEB58A889 /* Pods_SmartKuk_MVVM_RXSwift_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A8DC4ECE6840AFAC2EC0754 /* Pods_SmartKuk_MVVM_RXSwift_Example.framework */; };
+		C3583CD82166EB190081DEEC /* UI_Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3583CD72166EB190081DEEC /* UI_Extension.swift */; };
 		C37C0A012161A66500975AFF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37C0A002161A66500975AFF /* AppDelegate.swift */; };
 		C37C0A032161A66500975AFF /* CurrencyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37C0A022161A66500975AFF /* CurrencyViewController.swift */; };
 		C37C0A062161A66500975AFF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C37C0A042161A66500975AFF /* Main.storyboard */; };
@@ -28,6 +29,7 @@
 		1B191633195257483290A16D /* Pods-SmartKuk_MVVM_RXSwift_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartKuk_MVVM_RXSwift_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SmartKuk_MVVM_RXSwift_Example/Pods-SmartKuk_MVVM_RXSwift_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		6A8DC4ECE6840AFAC2EC0754 /* Pods_SmartKuk_MVVM_RXSwift_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SmartKuk_MVVM_RXSwift_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1FE4226175FDDE99A96E037 /* Pods-SmartKuk_MVVM_RXSwift_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartKuk_MVVM_RXSwift_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-SmartKuk_MVVM_RXSwift_Example/Pods-SmartKuk_MVVM_RXSwift_Example.release.xcconfig"; sourceTree = "<group>"; };
+		C3583CD72166EB190081DEEC /* UI_Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UI_Extension.swift; sourceTree = "<group>"; };
 		C37C09FD2161A66500975AFF /* SmartKuk_MVVM_RXSwift_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SmartKuk_MVVM_RXSwift_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C37C0A002161A66500975AFF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C37C0A022161A66500975AFF /* CurrencyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyViewController.swift; sourceTree = "<group>"; };
@@ -107,6 +109,7 @@
 				C37C0A202161AEAC00975AFF /* CurrencyViewModel.swift */,
 				C37C0A1C2161AE3500975AFF /* CurrencyViewModelDataSource.swift */,
 				C37C0A1E2161AE4400975AFF /* CurrencyViewModelDelegate.swift */,
+				C3583CD72166EB190081DEEC /* UI_Extension.swift */,
 				C37C0A072161A66500975AFF /* Assets.xcassets */,
 				C37C0A192161A8C400975AFF /* CurrencyViewCell.xib */,
 				C37C0A092161A66500975AFF /* LaunchScreen.storyboard */,
@@ -240,6 +243,7 @@
 				C37C0A152161A84B00975AFF /* CurrencyModel.swift in Sources */,
 				C37C0A032161A66500975AFF /* CurrencyViewController.swift in Sources */,
 				C37C0A1D2161AE3500975AFF /* CurrencyViewModelDataSource.swift in Sources */,
+				C3583CD82166EB190081DEEC /* UI_Extension.swift in Sources */,
 				C37C0A132161A81700975AFF /* CurrencyServiceProtocol.swift in Sources */,
 				C37C0A1F2161AE4400975AFF /* CurrencyViewModelDelegate.swift in Sources */,
 				C37C0A012161A66500975AFF /* AppDelegate.swift in Sources */,

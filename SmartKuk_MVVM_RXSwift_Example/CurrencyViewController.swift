@@ -12,8 +12,10 @@ import RxSwift
 
 final class CurrencyViewController: UIViewController {
 
-    @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var loadingView: UIActivityIndicatorView!
+    @IBOutlet var tableView: UITableView!
+    @IBOutlet var activityIndicator: UIActivityIndicatorView!
+    
+    private let refresh = UIBarButtonItem(barButtonSystemItem: .refresh, target: nil, action: nil)
     
     /// 쓰레기통
     let disposableBag = DisposeBag()
@@ -31,45 +33,41 @@ final class CurrencyViewController: UIViewController {
         
         super.viewDidLoad()
         
+        tableView.register(UINib(nibName: identifier, bundle: Bundle.main), forCellReuseIdentifier: identifier)
+        
+        navigationItem.rightBarButtonItem = refresh
+        
+        navigationItem.title = "SmartKuk Sample"
+        
         currencyDataSource = CurrencyListDataSource()
         
-        setUpUI()
-        
-        currencyDataSource.fetch()
-        
         setUpRx()
+        
+        currencyDataSource.reload.onNext(())
     }
 }
 
 extension CurrencyViewController {
     
-    func setUpUI() {
-        
-        tableView.register(UINib(nibName: identifier, bundle: Bundle.main), forCellReuseIdentifier: identifier)
-        
-        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .refresh, target: nil, action: nil)
-    }
-    
+    /// UI 컴포넌트들과 바인딩
     func setUpRx() {
         
-        navigationItem.rightBarButtonItem?.rx.tap
-            .debounce(0.0, scheduler: MainScheduler.instance)
-            .subscribe(){ event in
-                self.currencyDataSource.fetch()
-            }
+        // UIBarButtonItem 과 Driver와 연결
+        currencyDataSource.loading
+            .drive(activityIndicator.rx.isAnimating)
             .disposed(by: disposableBag)
         
-        currencyDataSource.title
-            .bind(to: navigationItem.rx.title)
+        // 버튼의 tap 이벤트에 옵저버를 바인딩
+        refresh.rx.tap
+            .debounce(0.5, scheduler: MainScheduler.asyncInstance)
+            .bind(to: currencyDataSource.reload)
             .disposed(by: disposableBag)
-        
-        currencyDataSource.isFetching
-            .bind(to: self.loadingView.rx.isAnimating)
-            .disposed(by: disposableBag)
-        
-        currencyDataSource.models?
+
+        // 뷰모델의 변경이 발생하면 테이블뷰를 그림
+        currencyDataSource.viewModels
+            .observeOn(MainScheduler.instance)
             .bind(to: tableView.rx.items(cellIdentifier: identifier, cellType: cellType))
-            { (_, data, cell) in cell.configure(CurrencyViewModel(data)) }
+            { (_, data, cell) in cell.configure(data) }
             .disposed(by: disposableBag)
     }
 }

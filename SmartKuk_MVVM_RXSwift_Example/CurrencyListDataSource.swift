@@ -10,48 +10,43 @@ import Foundation
 import RxSwift
 import RxCocoa
 
-/// ViewController 관리하는 데이터소스
+/// CurrencyViewController 관리하는 데이터소스
 final class CurrencyListDataSource {
     
+    /// 쓰레기통
     let disposableBag = DisposeBag()
     
-    var currencyService: CurrencyServiceProtocol
+    /// 환율 정보를 제공하는 서비스
+    let currencyService: CurrencyServiceProtocol
     
-    var models: Observable<[CurrencyModel]>?
+    /// 관찰 가능한 뷰모델
+    let viewModels: Observable<[CurrencyViewModel]>
     
-    let latestDateObserver: AnyObserver<Date>
+    /// 새로고침 버튼 이벤트와 bind 되는 관찰자
+    let reload: AnyObserver<Void>
     
-    let title: Observable<String>
+    /// 메인 스레드 사용하는 관찰 가능한 Driver
+    let loading: Driver<Bool>
     
-    let fetchObserver: AnyObserver<Bool>
-    
-    let isFetching: Observable<Bool>
-    
-    init(currencyService: CurrencyServiceProtocol = CurrencyService()) {
+    init(service: CurrencyServiceProtocol = CurrencyService()) {
         
-        self.currencyService = currencyService
+        currencyService = service
         
-        let _latestDate = BehaviorSubject<Date>(value: Date())
+        let _loading = ActivityIndicator()
         
-        self.latestDateObserver = _latestDate.asObserver()
+        loading = _loading.asDriver()
         
-        self.title = _latestDate.asObservable().map { "\($0)" }
+        let _reload = PublishSubject<Void>()
         
-        let _isFetching = BehaviorSubject<Bool>(value: false)
+        reload = _reload.asObserver()
         
-        self.fetchObserver = _isFetching.asObserver()
-        
-        self.isFetching = _isFetching.asObservable()
-    }
-    
-    func fetch() {
-        
-        fetchObserver.on(Event.next(true))
-        
-        latestDateObserver.on(Event.next(Date()))
-        
-        models = currencyService.fetch(base: "KRW", "2018-09-26", ["USD","JPY"])
-        
-        fetchObserver.on(Event.next(false))
+        // Element가 CurrencyViewModel인 Observable 요소로 전환
+        viewModels = _reload.asObservable()
+            .flatMapLatest { _ in
+                return service.fetch(base: "KRW", "2018-09-26", ["USD","JPY"])
+                    .trackActivity(_loading)
+                    .asDriver(onErrorJustReturn: [CurrencyModel]())
+            }
+            .map({ $0.map({ CurrencyViewModel($0) }) })
     }
 }

@@ -39,8 +39,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="dCz-z9-doW"/>
                     <connections>
-                        <outlet property="loadingView" destination="nJg-JH-jv4" id="3ng-yL-pN0"/>
-                        <outlet property="tableView" destination="RJQ-cE-FrK" id="Y2P-5U-b4P"/>
+                        <outlet property="activityIndicator" destination="nJg-JH-jv4" id="feR-Po-NMS"/>
+                        <outlet property="tableView" destination="RJQ-cE-FrK" id="9wU-dp-Ucw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
